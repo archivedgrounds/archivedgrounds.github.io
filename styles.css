@@ -8,21 +8,21 @@ p
     color: rgb(255, 255, 255);
 }
 
-.game
+div.game
 {
     border: 5px ridge rgb(129, 129, 129);
     background-color: rgb(90, 54, 54);
     text-align: center;
 }
 
-.game:hover
+div.game:hover
 {
     border: 5px ridge rgb(129, 129, 129);
     background-color: rgb(88, 52, 52);
     text-align: center;
 }
 
-.game:active
+div.game:active
 {
     border: 5px ridge rgb(129, 129, 129);
     background-color: rgb(58, 34, 34);
@@ -31,7 +31,7 @@ p
 
 /* :hover */
 
-.gameViewerSWF
+div.gameViewerSWF
 {
     border: 5px ridge rgb(129, 129, 129);
     background-color: rgb(88, 52, 52);
