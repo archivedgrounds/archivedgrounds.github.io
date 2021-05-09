@@ -14,3 +14,9 @@ p
     background-color: rgb(88, 52, 52);
     text-align: center;
 }
+
+.gameViewerSWF
+{
+    border: 5px ridge rgb(129, 129, 129);
+    background-color: rgb(88, 52, 52);
+}
