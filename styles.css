@@ -18,7 +18,7 @@ div.game
 div.game:hover
 {
     border: 5px ridge rgb(129, 129, 129);
-    background-color: rgb(68, 40, 40);
+    background-color: rgb(58, 37, 37);
     text-align: center;
 }
 
