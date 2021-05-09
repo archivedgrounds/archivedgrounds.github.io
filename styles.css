@@ -11,9 +11,25 @@ p
 .game
 {
     border: 5px ridge rgb(129, 129, 129);
+    background-color: rgb(90, 54, 54);
+    text-align: center;
+}
+
+.game:hover
+{
+    border: 5px ridge rgb(129, 129, 129);
     background-color: rgb(88, 52, 52);
     text-align: center;
 }
+
+.game:active
+{
+    border: 5px ridge rgb(129, 129, 129);
+    background-color: rgb(58, 34, 34);
+    text-align: center;
+}
+
+/* :hover */
 
 .gameViewerSWF
 {
