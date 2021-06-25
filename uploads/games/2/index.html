@@ -1,13 +1,48 @@
 <html>
     <head>
         <title>ArchivedGrounds</title>
-        <link rel="stylesheet" href="../../../styles.css" type="text/css" media="all">
+        <link rel="stylesheet" href="../../../ng_2015.css" type="text/css" media="all">
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     </head>
     <body>
-        <p>WARNING: If this game uses SWF format, the website will use Ruffle.</p>
-        <div class="gameViewerSWF">
-            <object type="application/x-shockwave-flash" data="./1999 Pico 2.swf"></object>
-        </div>
+        <script>
+            // CHANGE TO GAME TITLE!!
+            var gameTitle = "Pico 2";
+            // CHANGE TO GAME SWF!!
+            var gameSwf = "1999 Pico 2.swf"
+            $(document).ready(function(){
+                // delete "gameViewerSWF"
+                var gameViewerSWF = $("gameViewerSWF");
+                gameViewerSWF.remove();
+
+                // create NG-like game viewer
+                // POD BASE
+                var nglike_base = "<div class=\"pod embed\">";
+                var nglike_head = "\t<div class=\"pod-head\" id=\"embed_header\">"
+                var head_title = "\t\t<h2 class=\"rated-e\" itemprop=\"name\" id=\"podHeadTitle\">TITLE HERE</h2>";
+                var close_nglike = "\t</div>";
+                // EMBED
+                var embed_base = "<div class=\"pod-body breakout\" id=\"embed_podcontent\">";
+                var embed_wrapper = "<div id=\"embed_wrapper\" style=\"width: 477px; margin-left: 50%; height: 540px;\">";
+                var embed_sizer = "<div id=\"embed_sizer\" style=\"height: 540px; width: 960px; margin-left: -480px;\">";
+                var iframe_embed = "<div id=\"iframe_embed\"><div style=\"width: 960px; height: 540px\">";
+                var game_iframe = "<iframe id=\"ruffle_embed\" scrolling=\"no\" mozallowfullscreen=\"true\" msallowfullscreen=\"true\" webkitallowfullscreen=\"true\" allowfullscreen=\"true\" allowtransparency=\"true\" allow=\"autoplay; fullscreen *; geolocation; microphone; camera; midi\" style=\"width: 910px; height: 579px; border: medium none; overflow: hidden;\" src=\"../../../js/ruffle/ruffleembed.html?toembed=" + window.location.href + gameSwf + "\" frameborder=\"0\"></iframe>";
+                var closeAll = "</div> </div> </div> </div> </div>";
+
+                var nglikegameviewer = /* POD BASE */nglike_base + nglike_head + head_title + close_nglike + /* EMBED SHIT FINALLY */ embed_base + embed_wrapper + embed_sizer + iframe_embed + game_iframe + closeAll;
+                $("body").prepend(nglikegameviewer);
+
+                // set the game viewer title text
+                $("#podHeadTitle").text(gameTitle);
+
+                // delete the warning
+                var text = $("p");
+                if (text.text() == "WARNING: If this game uses SWF format, the website will use Ruffle.")
+                {
+                    text.remove();
+                }
+            });
+        </script>
         <script src="../../../js/ruffle/ruffle.js"></script>
     </body>
 </html>
